@@ -12,6 +12,17 @@ fn send_bitcoin(){
     }
 
     println("\n");
+
+    let mut recipient = String::new();
+    io::stdin().read_line(&mut recipient);
+
+    if clients.contains(recipient.trim()){
+        println!("How many BTC do you want to send? : ");
+        let mut amount = String::new();
+        io::stdin().read_line(&mut amount);
+
+    }
+
 }
 
 fn recieve_bitcoin(){
