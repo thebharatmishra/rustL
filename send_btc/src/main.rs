@@ -11,18 +11,20 @@ fn send_bitcoin(){
         println!("{}",client);
     }
 
-    println("\n");
+    println!("\n");
 
     let mut recipient = String::new();
     io::stdin().read_line(&mut recipient);
 
-    if clients.contains(recipient.trim()){
+    if clients.contains(&recipient.trim()){
         println!("How many BTC do you want to send? : ");
         let mut amount = String::new();
         io::stdin().read_line(&mut amount);
-
+println!("You sent {} BTC to {}\n",amount.trim(),recipient.trim());
     }
-
+else{
+    println!("{} is not in your contacts.\n",recipient.trim());
+}
 }
 
 fn recieve_bitcoin(){
